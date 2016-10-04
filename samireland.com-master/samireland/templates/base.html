@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Sam Ireland">
+  <meta name="description" content="Sam Ireland's personal website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %} - Sam Ireland</title>
+  <link rel="icon" type="image/gif" href="/static/icons/favicon.gif">
+  {% block precss %}
+  {% endblock %}
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet'
+   type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  {% block extrahead %}
+  {% endblock %}
+  <!--google-analytics-->
+</head>
+
+<body>
+  <header>Sam Ireland
+    {% if user.is_authenticated %}
+    <a href="/account/logout/" class="logout">Logout</a>
+    {% endif %}
+  </header>
+  <nav>
+    <div class="nav_links">
+      <div class="nav_link">
+        <a href="/">Home</a>
+      </div>
+      <div class="nav_link">
+        <a href="{% url 'blog_page' %}">Blog</a>
+      </div>
+      <div class="nav_link">
+        <a href="{% url 'piano_page' %}">Piano</a>
+      </div>
+      <div class="nav_link">
+        <a href="{% url 'about_page' %}">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {% block main %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <hr>
+    <div id="external_links">
+      <div class="external_link">
+        <a href="http://facebok.com/samirelanduk/" target="_blank">
+          <img src="/static/icons/facebook.png">
+        </a>
+      </div>
+      <div class="external_link">
+        <a href="http://twitter.com/sam_m_ireland/" target="_blank">
+          <img src="/static/icons/twitter.png">
+        </a>
+      </div>
+      <div class="external_link">
+        <a href="http://linkedin.com/in/sam-ireland-42b73568/" target="_blank">
+          <img src="/static/icons/linkedin.png">
+        </a>
+      </div>
+      <div class="external_link">
+        <a href="http://github.com/samirelanduk/" target="_blank">
+          <img src="/static/icons/github.png">
+        </a>
+      </div>
+      <div class="external_link">
+        <a href="http://instagram.com/samirelanduk/" target="_blank">
+          <img src="/static/icons/instagram.png">
+        </a>
+      </div>
+      <div class="external_link">
+        <a href="http://youtube.com/channel/UCeitnG6LfY-F4C3jxHd-rRA/" target="_blank">
+          <img src="/static/icons/youtube.png">
+        </a>
+      </div>
+      <div class="external_link">
+        <a href="http://plus.google.com/+samireland/" target="_blank">
+          <img src="/static/icons/googleplus.png">
+        </a>
+      </div>
+    </div>
+  </footer>
+  {% block js %}
+  {% endblock %}
+</body>
+
+</html>

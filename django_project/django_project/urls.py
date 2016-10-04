@@ -1,0 +1,21 @@
+from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django_project import settings
+
+admin.autodiscover()
+
+# Anything with r in front is the regular expression
+
+urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)), # looked the user requst (admin) -> admin.site.urls - this is how django responds 
+    url(r'^ScienceBlog/', include('ScienceBlog.urls')), # looked the user requs    t (admin) -> admin.site.urls - this is how django responds
+    url(r'^hw1/', include('hw1.urls')),
+    url(r'^plotlib/', include('plotlib.urls')),
+
+    #  url(r'^wpl/', include('wpl.urls')),
+    # instead of going to the admin, go to the ScienceBlog website for the information the user needs
+]  + static(settings.SCIENCE_URL, document_root=settings.SCIENCE_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()

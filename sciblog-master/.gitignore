@@ -1,0 +1,13 @@
+~*
+*~
+Thumbs.db
+.DS_Store
+env
+*.pyc
+db.sqlite3
+blog/migrations/
+img/20*/
+img/19*/
+.idea/
+img/upload/
+sciblog/private.py
