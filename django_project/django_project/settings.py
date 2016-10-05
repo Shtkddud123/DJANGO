@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'latexify',
     'hw1',
+    'vib1',
     'ScienceBlog.apps.ScienceConfig',
     'plotlib.apps.plotlibconfig',
     'django.contrib.admin',
@@ -93,9 +94,12 @@ STATICFILES_DIRS = [
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, '/hw1/templates/hw1/'),
+    os.path.join(BASE_DIR, '/vib1/templates/vib1/'),
 )
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 

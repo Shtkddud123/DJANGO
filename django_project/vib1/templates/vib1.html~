@@ -1,0 +1,41 @@
+{% load latexify %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include 'latexify/stylesheets.html' %}
+    <title> This is an example of a django-numpy </title>
+    <script language = "javascript" type = "text/javascript">
+    document.write("Hello World!");
+    document.write("<br /> It's a beautiful day!");
+    </script>
+  </head>
+  <body>
+    <h1> Here is a Level 1 Heading </h1>
+    {% latexify 'c = \pm\sqrt{a^2 + b^2}'  math_inline=True %} This is a simple sentence. {% latexify 'c = \pm\sqrt{a^2 + b^2}'  math_inline=True %} {% latexify 'U_{NP}' math_inline=True %}
+
+ <h2> Here is a Level 1 Heading </h2>
+
+ 
+<form method=post action="">{% csrf_token %}
+<table>
+  {% for field in form %}
+  <tr>
+    <td>{{ field.name }}</td>
+    <td>{{ field }}</td>
+    <td>{{ field.label }}</td>
+    <td>{{ field.errors }}</td>
+    <td></td>
+  </tr>
+  {% endfor %}
+</table>
+<p><input type=submit value=Compute></form></p>
+
+<p>
+  {% if result != None %}
+  {% load static %}
+  <img src="{% get_static_prefix %}{{ result }}" width=500>
+    {% endif %}
+  </p>
+{% include "latexify/scripts.html" %}
+</body>
+</html>
