@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^hw1/', include('hw1.urls')),
     url(r'^plotlib/', include('plotlib.urls')),
     url(r'^vib1/', include('vib1.urls')),
+    url(r'^polls/', include('polls.urls')),
     #  url(r'^wpl/', include('wpl.urls')),
     # instead of going to the admin, go to the ScienceBlog website for the information the user needs
 ]  + static(settings.SCIENCE_URL, document_root=settings.SCIENCE_ROOT)

@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     'latexify',
     'hw1',
     'vib1',
+    'polls',
     'ScienceBlog.apps.ScienceConfig',
     'plotlib.apps.plotlibconfig',
     'django.contrib.admin',
